@@ -1,0 +1,19 @@
+{
+  "name": "humid",
+  "version": "0.0.1",
+  "authors": [
+    "David Fekke <david@fekke.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+	"amcharts#": "~3.4.6"
+  }
+}
