@@ -1,0 +1,55 @@
+<%- include header %>
+        <img class="background" src="<%= owner.background %>">
+        <% if (user && (user._id == owner._id)) { %>
+        <div class="metabar-header">
+            <i class="fa fa-picture-o fa-fw" id="changeUserBackground"></i>
+            <form method="post" action="/changeuserbackground" enctype="multipart/form-data" style="display:none;">
+                <input type="file" id="uploadUserBackground" name="background" style="display:none;">
+            </form>
+        </div>
+        <% } %>
+        <div class="containering container">
+            <div>
+                <img src="<%= owner.avatar %>" class="hero">
+            </div>
+            <div calss="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+                    <h1 class="profile-name"><%= owner.name %></h1>
+                    <% if (owner.bio!=null){ %>
+                    <h3 class="profile-bio"><%= owner.bio %></h3>
+                    <% } %>
+                </div>
+            </div>
+            <% if (user && (user._id == owner._id)) { %>
+            <div calss="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+                    <a href="/newproject" class="project-button btn">New Project</a>
+                </div>
+            </div>
+            <% } %>
+            <% posts.forEach(function (post, index) { %>
+                <div calss="row">
+                    <a href="/p/<%= post._id %>" class="project-background-wrapper col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                        <img class="project-background userpage-project-background" src="<%=post.background%>">
+                        <% if(post.subtitle){ %>
+                            <p class="project-title"><%= post.title %></p>
+                            <p class="project-subtitle user-project-subtitle"><%= post.subtitle %></p>
+                        <% } else { %>
+                            <p class="project-user-titleonly"><%= post.title %></p>
+                        <% } %>
+                    </a>
+                </div>
+            <% }) %>
+            
+            <div class="row">
+            <footer class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2"></footer>
+            </div>
+        </div>
+        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <script src="/javascripts/medium-editor.min.js"></script>
+        <script src="/javascripts/userbackground.js"></script>
+        <script src="/javascripts/resample.js"></script>
+        <script src="/javascripts/nprogress.js"></script>
+        <script src="/javascripts/script-main.js"></script>
+    </body>    
+</html>

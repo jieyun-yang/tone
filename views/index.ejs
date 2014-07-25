@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Kernel</title>
+        <meta name="viewport" content="user-scalable=0, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- <link rel="icon" href="images/favicon.ico"/> -->
+        <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Sofia|Open+Sans:300,600|Quattrocento' rel='stylesheet' type='text/css'>
+        <link href="/stylesheets/animate.min.css" rel="stylesheet" type="text/css">
+        <link href="/stylesheets/nprogress.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/stylesheets/style-landingpage.css">
+    </head>
+    <body>
+        <header class="background">
+            <img class="background-img" src="/images/background.jpg">
+            <div class="container">
+                <div class="closeButton"></div>
+                <div class="row">
+                    <h1 class="logo col-xs-6 col-md-4">Kernel</h1>
+                </div>
+                 <div class="row">
+                    <h2 class="slogan col-xs-6 col-md-4">a platform to showcase your talent</h2>
+                </div>
+                <form method="post" role="form" class="signup-form col-xs-12  col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" autocomplete="off">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Full Name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                    </div>
+                    <button type="submit" class="signup btn btn-default">Sign Up</button>
+                    <br>
+                    <label for="login">or</label>
+                    <a href="/login" class="btn" id="login">Log In</a>
+                </form>
+                <div class="row">
+                    <div class="action">
+                        <a href="#s" target="_self" class="signup-button btn">Get Started</a>
+                        <a href="/login" target="_self" class="login-button btn">Log In</a>
+                    </div>
+                </div>
+                
+                <div class="learnrow row">
+                    <a class="learnmore-button col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5" href="#" target="_self">Learn more <img class="triangleIcon" src="images/triangle.png"></a>
+                </div>
+                
+            </div>
+        </header>
+        <div class="margin"></div>
+        
+        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <script src="/javascripts/nprogress.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/javascripts/script-landingpage.js"></script>
+
+    </body>
+</html>
