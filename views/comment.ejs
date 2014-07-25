@@ -1,0 +1,42 @@
+<div class="container comment-container">
+  <div class="row">
+    <h3 class="col-xs-12 com-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" style="font-family:open sans;font-weight:400;color:#ccc;">
+        <%=post.comments.length%> Comments
+    </h3>
+  </div>
+  <% post.comments.forEach(function (comment, index) { %>
+    <div class="row">
+      <div class="col-xs-12 com-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 comment-wrapper">
+        <div class="col-xs-3 com-sm-2 col-md-1 comment-avatar-wrapper">
+          <a href="/u/<%=comment.userId%>" class="comment-user-href"> <img src="<%=comment.avatar%>" class="comment-avatar"> </a>
+        </div>
+        <div class="col-xs-9 com-sm-10 col-md-11 comment-body-wrapper">
+          <p style="font-family:open sans;font-weight:600;font-size:25px;color:#333;"><%=comment.name%></p>
+          <article style="font-family:open sans;font-size:21px;line-height:160%;"><%-comment.content%></article>
+        </div>
+      </div>
+    </div>
+    <br>
+  <% }) %>
+
+  <div class="row">
+    <div class="col-xs-12 com-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 comment-wrapper">
+      <hr style="margin-top:0;margin-bottom:4%;">
+      <div class="col-xs-3 com-sm-2 col-md-1 comment-avatar-wrapper">
+        <img src="<%=user.avatar%>" class="comment-avatar" id="comment-user-avatar">
+      </div>
+      <div class="col-xs-9 com-sm-10 col-md-11 comment-body-wrapper">
+        <article id="comment"></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-5" style="text-align:center;margin-top:2%;">
+      <p style="display:none;" id="comment-postId"><%=post._id%></p>
+      <p style="display:none;" id="comment-name"><%=user.name%></p>
+      <button class="btn" id="comment-button">Post Comment</button>
+    </div>
+  </div>
+</div> 
+

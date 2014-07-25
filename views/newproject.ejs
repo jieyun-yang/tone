@@ -1,0 +1,32 @@
+<%- include header %>
+        <header class="post-background-wrapper">
+            <img src="<%=tempbackground%>" class="post-background" id="postBackground">
+            <i class="fa fa-picture-o fa-fw" id="changePostBackground"></i>
+            <form method="post" action="/changepostbackground" enctype="multipart/form-data" style="display:none;">
+                <input type="file" id="uploadPostBackground" name="background" style="display:none;">
+            </form>
+            <div class="metabar-header">
+                <a href="#" class="publish-button btn">Publish</a>
+            </div>
+            <div class="title-wrapper">
+                <input type="text" class="new-title" id="new-title" placeholder="Title"/>
+                <input type="text" class="new-subtitle" id="new-subtitle" placeholder="Subtitle"/>
+            </div>
+            <div class="metabar-footer"></div>
+        </header>
+
+         <div class="container projectcontainer">
+            <div class="row">
+                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                    <article class="editable article-post" id="new-post"></article>
+                </div>
+            </div>          
+        </div>
+        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <script src="/javascripts/medium-editor.min.js"></script>
+        <script src="/javascripts/postbackground.js"></script>
+        <script src="/javascripts/resample.js"></script>
+        <script src="/javascripts/nprogress.js"></script>
+        <script src="/javascripts/script-main.js"></script>
+    </body>    
+</html>

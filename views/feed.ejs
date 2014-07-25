@@ -1,0 +1,44 @@
+<%- include header %>
+        <header class="feed-background">
+            <h1>Kernel</h1>
+            <h3>a platform to showcase your talent</h3>
+        </header>
+        <div class="container">
+
+            <% posts.forEach(function (post, index) { %>
+
+            <div class="row">
+                <a href="/p/<%= post._id %>" class="project-background-wrapper col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <img class="project-background" src="<%= post.background %>">
+                    <div class="row">
+                        <div class="feed-title-container col-xs-9 col-sm-9 col-md-10">
+                        <% if(post.subtitle){ %>
+                            <p class="project-title"><%= post.title %></p>
+                            <p class="project-subtitle"><%= post.subtitle %></p>
+                        <% } else { %>
+                            <p class="project-titleonly"><%= post.title %></p>
+                        <% } %>
+
+                        </div>
+                        <div class="feed-profile-container col-xs-3 col-sm-3 col-md-2">
+                            <div class="feed-avatar-wrapper">
+                                <img class="feed-avatar" src="<%= post.avatar %>">
+                            </div>
+                            <p class="feed-username"><%= post.name %></p>
+                            <div class="author-url">/u/<%=post.userId%></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <% }) %>
+             <% if (posts.length==0) { %>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" style="font-family:Open Sans;font-weight:600;font-size:28px;color:#333;margin-top:4%;text-align:center;">Oh, no project yet!<p style="font-family:Open Sans;font-size:16px;color:#666;text-align:center;margin-top:1%;">->My Project to add one</p></div>
+                </div>
+             <% } %>
+            <div class="row">
+            <footer class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2"></footer>
+            </div>
+        </div>
+<%- include footer %>
