@@ -127,7 +127,6 @@ twit.stream('statuses/filter', { track: ["I'm happy","I am happy","I feel happy"
 stream.on('data', function (data) {
     if (data.text) { 
       var text = data.text;
-      console.log(data);
       if ((text.indexOf("I'm happy") != -1)||(text.indexOf("I am happy") != -1)||(text.indexOf("I feel happy") != -1)||
         (text.indexOf("I'm pleased") != -1)||(text.indexOf("I am pleased") != -1)||
         (text.indexOf("I feel pleased") != -1)||(text.indexOf("I'm cheerful") != -1)||
@@ -135,12 +134,14 @@ stream.on('data', function (data) {
         (text.indexOf("I'm delighted") != -1)||(text.indexOf("I am delighted") != -1)||
         (text.indexOf("I feel delighted") != -1)||(text.indexOf("I'm laughing") != -1)||
         (text.indexOf("I am laughing") != -1)) {
-        happy.num++;
-        total++;
-        happy.percentage = (happy.num/total)*100;
-        happy.user = data.user.screen_name;
-        happy.tweet = data.text;
-        happy.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==happy.user) {
+            happy.num++;
+            total++;
+            happy.percentage = (happy.num/total)*100;
+            happy.user = data.user.screen_name;
+            happy.tweet = data.text;
+            happy.avatar = data.user.profile_image_url_https;
+        }
       }
       if ((text.indexOf("I'm excited") != -1)||(text.indexOf("I am excited") != -1)||
         (text.indexOf("I feel excited") != -1)||(text.indexOf("I am energetic") != -1)||
@@ -148,12 +149,14 @@ stream.on('data', function (data) {
         (text.indexOf("I am passionate") != -1)||(text.indexOf("I'm passionate") != -1)||
         (text.indexOf("I feel hysterical") != -1)||(text.indexOf("I feel passionate") != -1)||
         (text.indexOf("I am hysterical") != -1)||(text.indexOf("I'm hysterical") != -1)) {
-        excited.num++;
-        total++;
-        excited.percentage = (excited.num/total)*100;
-        excited.user = data.user.screen_name;
-        excited.tweet = data.text;
-        excited.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==excited.user) {
+            excited.num++;
+            total++;
+            excited.percentage = (excited.num/total)*100;
+            excited.user = data.user.screen_name;
+            excited.tweet = data.text;
+            excited.avatar = data.user.profile_image_url_https;
+        }
       }
       if ((text.indexOf("I'm sad") != -1)||(text.indexOf("I am sad") != -1)||
         (text.indexOf("I feel sad") != -1)||(text.indexOf("I am crying") != -1)||
@@ -161,12 +164,14 @@ stream.on('data', function (data) {
         (text.indexOf("I'm heartbroken") != -1)||(text.indexOf("I feel heartbroken") != -1)||
         (text.indexOf("I'm despaired") != -1)||(text.indexOf("I am despaired") != -1)||
         (text.indexOf("I feel despaired") != -1)) {
-        sad.num++;
-        total++;
-        sad.percentage = (sad.num/total)*100;
-        sad.user = data.user.screen_name;
-        sad.tweet = data.text;
-        sad.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==sad.user) {
+            sad.num++;
+            total++;
+            sad.percentage = (sad.num/total)*100;
+            sad.user = data.user.screen_name;
+            sad.tweet = data.text;
+            sad.avatar = data.user.profile_image_url_https;
+        }
       }
       if ((text.indexOf("I'm mad") != -1)||(text.indexOf("I am mad") != -1)||
         (text.indexOf("I feel mad") != -1)||(text.indexOf("I am angry") != -1)||
@@ -176,23 +181,27 @@ stream.on('data', function (data) {
         (text.indexOf("I'm annoyed") != -1)||(text.indexOf("I feel annoyed") != -1)||
         (text.indexOf("I'm indignant") != -1)||(text.indexOf("I feel indignant") != -1)||
         (text.indexOf("I am indignant") != -1)) {
-        mad.num++;
-        total++;
-        mad.percentage = (mad.num/total)*100;
-        mad.user = data.user.screen_name;
-        mad.tweet = data.text;
-        mad.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==mad.user) {
+            mad.num++;
+            total++;
+            mad.percentage = (mad.num/total)*100;
+            mad.user = data.user.screen_name;
+            mad.tweet = data.text;
+            mad.avatar = data.user.profile_image_url_https;
+        }
       }
       if ((text.indexOf("I'm jealous") != -1)||(text.indexOf("I am jealous") != -1)||
         (text.indexOf("I feel jealous") != -1)||(text.indexOf("I envy") != -1)||
         (text.indexOf("I'm envious") != -1)||(text.indexOf("I am envious") != -1)||
         (text.indexOf("I feel envious") != -1)||(text.indexOf("with envy") != -1)) {
-        jealous.num++;
-        total++;
-        jealous.percentage = (jealous.num/total)*100;
-        jealous.user = data.user.screen_name;
-        jealous.tweet = data.text;
-        jealous.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==jealous.user) {
+            jealous.num++;
+            total++;
+            jealous.percentage = (jealous.num/total)*100;
+            jealous.user = data.user.screen_name;
+            jealous.tweet = data.text;
+            jealous.avatar = data.user.profile_image_url_https;
+        }
       }
       if ((text.indexOf("I feel upset") != -1)||(text.indexOf("I'm upset") != -1)||
         (text.indexOf("I am upset") != -1)||(text.indexOf("I feel frustrated") != -1)||
@@ -202,12 +211,14 @@ stream.on('data', function (data) {
         (text.indexOf("I'm depressed") != -1)||(text.indexOf("I am depressed") != -1)||
         (text.indexOf("I'm discouraged") != -1)||(text.indexOf("I am discouraged") != -1)||
         (text.indexOf("I feel discouraged") != -1)) {
-        upset.num++;
-        total++;
-        upset.percentage = (upset.num/total)*100;
-        upset.user = data.user.screen_name;
-        upset.tweet = data.text;
-        upset.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==upset.user) {
+            upset.num++;
+            total++;
+            upset.percentage = (upset.num/total)*100;
+            upset.user = data.user.screen_name;
+            upset.tweet = data.text;
+            upset.avatar = data.user.profile_image_url_https;
+        }
       }
       if ((text.indexOf("I feel comfortable") != -1)||(text.indexOf("I'm comfortable") != -1)||
         (text.indexOf("I am comfortable") != -1)||(text.indexOf("I feel relaxed") != -1)||
@@ -215,12 +226,14 @@ stream.on('data', function (data) {
         (text.indexOf("I feel satisfied") != -1)||(text.indexOf("I'm satisfied") != -1)||
         (text.indexOf("I am satisfied") != -1)||(text.indexOf("I feel relieved") != -1)||
         (text.indexOf("I'm relieved") != -1)||(text.indexOf("I am relieved") != -1)) {
-        comfort.num++;
-        total++;
-        comfort.percentage = (comfort.num/total)*100;
-        comfort.user = data.user.screen_name;
-        comfort.tweet = data.text;
-        comfort.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==comfort.user) {
+            comfort.num++;
+            total++;
+            comfort.percentage = (comfort.num/total)*100;
+            comfort.user = data.user.screen_name;
+            comfort.tweet = data.text;
+            comfort.avatar = data.user.profile_image_url_https;
+        }
       }
       if ((text.indexOf("I feel scared") != -1)||(text.indexOf("I am scared") != -1)||
         (text.indexOf("I'm scared") != -1)||(text.indexOf("I feel terrified") != -1)||
@@ -228,12 +241,14 @@ stream.on('data', function (data) {
         (text.indexOf("I feel panicked") != -1)||(text.indexOf("I am panicked") != -1)||
         (text.indexOf("I'm panicked") != -1)||(text.indexOf("I feel chilling") != -1)||
         (text.indexOf("I am chilling") != -1)||(text.indexOf("I'm chilling") != -1)) {
-        fear.num++;
-        total++;
-        fear.percentage = (fear.num/total)*100;
-        fear.user = data.user.screen_name;
-        fear.tweet = data.text;
-        fear.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==fear.user) {
+            fear.num++;
+            total++;
+            fear.percentage = (fear.num/total)*100;
+            fear.user = data.user.screen_name;
+            fear.tweet = data.text;
+            fear.avatar = data.user.profile_image_url_https;
+        }
       }
       if ((text.indexOf("I feel surprised") != -1)||(text.indexOf("I'm surprised") != -1)||
         (text.indexOf("I am surprised") != -1)||(text.indexOf("I feel shocked") != -1)||
@@ -241,12 +256,14 @@ stream.on('data', function (data) {
         (text.indexOf("I feel amazed") != -1)||(text.indexOf("I am amazed") != -1)||
         (text.indexOf("I'm amazed") != -1)||(text.indexOf("I feel stunned") != -1)||
         (text.indexOf("I am stunned") != -1)||(text.indexOf("I'm stunned") != -1)) {
-        surprised.num++;
-        total++;
-        surprised.percentage = (surprised.num/total)*100;
-        surprised.user = data.user.screen_name;
-        surprised.tweet = data.text;
-        surprised.avatar = data.user.profile_image_url_https;
+        if(data.user.screen_name!==surprised.user) {
+            surprised.num++;
+            total++;
+            surprised.percentage = (surprised.num/total)*100;
+            surprised.user = data.user.screen_name;
+            surprised.tweet = data.text;
+            surprised.avatar = data.user.profile_image_url_https;
+        }
       }
     }
   });

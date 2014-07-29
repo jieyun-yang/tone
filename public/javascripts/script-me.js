@@ -62,7 +62,6 @@ $(document).ready(function(){
             default:
             mood = 'happy';
         }
-        console.log('mood:'+mood);
     });
     var currentMood = 'mad';
     window.setInterval(function(){
