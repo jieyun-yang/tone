@@ -3,12 +3,8 @@ var ObjectID = require('mongodb').ObjectID;
 
 
 function User(user) {
-  this.name = user.name;
-  this.password = user.password;
   this.email = user.email;
-  this.bio = user.bio;
-  this.avatar = user.avatar;
-  this.background = user.background;
+  this.password = user.password;
 };
 
 module.exports = User;
@@ -17,12 +13,8 @@ module.exports = User;
 User.prototype.save = function(callback) {
   //要存入数据库的用户文档
   var user = {
-      name: this.name,
-      password: this.password,
       email: this.email,
-      bio: this.bio,
-      avatar: this.avatar,
-      background: this.background
+      password: this.password
   };
   //打开数据库
   mongodb.open(function (err, db) {
@@ -62,7 +54,6 @@ User.get = function(email, callback) {
         mongodb.close();
         return callback(err);//错误，返回 err 信息
       }
-      //查找用户名（name键）值为 name 一个文档
       collection.findOne({
         "email": email
       }, function (err, user) {
@@ -88,7 +79,6 @@ User.getById = function(_id, callback) {
         mongodb.close();
         return callback(err);//错误，返回 err 信息
       }
-      //查找用户名（name键）值为 name 一个文档
       collection.findOne({
         "_id": new ObjectID(_id)
       }, function (err, user) {
@@ -103,7 +93,7 @@ User.getById = function(_id, callback) {
 };
 
 
-User.update = function(_id, name, email, bio, avatar, callback) {
+User.update = function(_id, email, password, tesselIP) {
   //打开数据库
   mongodb.open(function (err, db) {
     if (err) {
@@ -115,44 +105,14 @@ User.update = function(_id, name, email, bio, avatar, callback) {
         mongodb.close();
         return callback(err);
       }
-      //更新文章内容
       collection.update({
         "_id": new ObjectID(_id)
       }, {
-        $set: {name:name,
-          bio:bio,
-          email: email,
-          avatar: avatar}, 
+          $set: {
+            email: email,
+            password: password
+          }, 
         }, function (err) {
-        mongodb.close();
-        if (err) {
-          return callback(err);
-        }
-        callback(null);
-      });
-    });
-  });
-};
-
-User.updateBackground = function(_id, background, callback) {
-  //打开数据库
-  mongodb.open(function (err, db) {
-    if (err) {
-      return callback(err);
-    }
-    //读取 posts 集合
-    db.collection('users', function (err, collection) {
-      if (err) {
-        mongodb.close();
-        return callback(err);
-      }
-      //更新文章内容
-      collection.update({
-        "_id": new ObjectID(_id)
-      }, {
-        $set: {
-          background: background}
-      }, function (err) {
         mongodb.close();
         if (err) {
           return callback(err);

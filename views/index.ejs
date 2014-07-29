@@ -3,62 +3,113 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Kernel</title>
-        <meta name="viewport" content="user-scalable=0, initial-scale=1.0">
+        <title>Tone</title>
+        <meta name="apple-touch-fullscreen" content="yes"> 
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <!-- <link rel="icon" href="images/favicon.ico"/> -->
-        <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Sofia|Open+Sans:300,600|Quattrocento' rel='stylesheet' type='text/css'>
-        <link href="/stylesheets/animate.min.css" rel="stylesheet" type="text/css">
-        <link href="/stylesheets/nprogress.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="/stylesheets/style-landingpage.css">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+        <link href="/stylesheets/animate.css" rel="stylesheet">
+        <link href="/stylesheets/nprogress.css" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/font.css">
+        <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
     <body>
-        <header class="background">
-            <img class="background-img" src="/images/background.jpg">
-            <div class="container">
-                <div class="closeButton"></div>
-                <div class="row">
-                    <h1 class="logo col-xs-6 col-md-4">Kernel</h1>
+        <div class="container-fluid index-container">
+            <div class="row header">
+                <div class="col-xs-4 col-sm-6 col-md-6">
+                    <section class="logo-container">
+                        <div class="logo mad">
+                            <img src="/images/tone-mad.png">
+                        </div>
+                        <div class="logo happy hiden">
+                            <img src="/images/tone-happy.png">
+                        </div>
+                        <div class="logo excited hiden">
+                            <img src="/images/tone-excited.png">
+                        </div>
+                        <div class="logo sad hiden">
+                            <img src="/images/tone-sad.png">
+                        </div>
+                        <div class="logo fear hiden">
+                            <img src="/images/tone-fear.png">
+                        </div>
+                        <div class="logo jealous hiden">
+                            <img src="/images/tone-jealous.png">
+                        </div>
+                        <div class="logo upset hiden">
+                            <img src="/images/tone-upset.png">
+                        </div>
+                        <div class="logo comfort hiden">
+                            <img src="/images/tone-comfort.png">
+                        </div>
+                        <div class="logo surprised hiden">
+                            <img src="/images/tone-surprised.png">
+                        </div>
+                    </section>
                 </div>
-                 <div class="row">
-                    <h2 class="slogan col-xs-6 col-md-4">a platform to showcase your talent</h2>
+                <div class="col-xs-8 col-sm-6 col-md-6">
+                     <section class="menu-container">
+                        <a class="twitter active" href="#"><i class="if if-twitter"></i></a>
+                        <a class="me" href="/my-tone"><i class="if if-me"></i></a>
+                    </section>
                 </div>
-                <form method="post" role="form" class="signup-form col-xs-12  col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" autocomplete="off">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Full Name" name="name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-                    </div>
-                    <button type="submit" class="signup btn btn-default">Sign Up</button>
-                    <br>
-                    <label for="login">or</label>
-                    <a href="/login" class="btn" id="login">Log In</a>
-                </form>
-                <div class="row">
-                    <div class="action">
-                        <a href="#s" target="_self" class="signup-button btn">Get Started</a>
-                        <a href="/login" target="_self" class="login-button btn">Log In</a>
-                    </div>
-                </div>
-                
-                <div class="learnrow row">
-                    <a class="learnmore-button col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5" href="#" target="_self">Learn more <img class="triangleIcon" src="images/triangle.png"></a>
-                </div>
-                
             </div>
-        </header>
-        <div class="margin"></div>
-        
-        <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+            <div class="row stream-out-container">
+                <div class="col-xs-12 col-sm-6 col-md-6 stream-container">
+                    <h3>Tweets from the <span>happy</span>:</h3>
+                    <ul class="happy-container"></ul>
+                    <ul class="excited-container hide"></ul>
+                    <ul class="sad-container hide"></ul>
+                    <ul class="mad-container hide"></ul>
+                    <ul class="jealous-container hide"></ul>
+                    <ul class="upset-container hide"></ul>
+                    <ul class="comfortable-container hide"></ul>
+                    <ul class="fear-container hide"></ul>
+                    <ul class="surprised-container hide"></ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 chart-out-container">
+                    <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
+                        <div class="chart-container text-center">
+                            <canvas id="chart-area" width="300" height="300"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-md-10 col-md-offset-1 scale-out-container text-center">
+                        <div class="scale-container happy">
+                            <div class="round happy"></div>Happy:  <span>25%</span>
+                        </div>
+                        <div class="scale-container excited">
+                            <div class="round excited"></div>Excited: <span>10%</span>
+                        </div>
+                        <div class="scale-container sad">
+                            <div class="round sad"></div>Sad: <span>18%</span>
+                        </div>
+                        <div class="scale-container mad">
+                            <div class="round mad"></div>Mad: <span>6%</span>
+                        </div>
+                        <div class="scale-container jealous">
+                            <div class="round jealous"></div>Jealous: <span>8%</span>
+                        </div>
+                        <div class="scale-container upset">
+                            <div class="round upset"></div>Upset: <span>10%</span>
+                        </div>
+                        <div class="scale-container comfortable">
+                            <div class="round comfortable"></div>Relaxed: <span>9%</span>
+                        </div>
+                         <div class="scale-container fear">
+                            <div class="round fear"></div>Fear: <span>8%</span>
+                        </div>
+                         <div class="scale-container surprised">
+                            <div class="round surprised"></div>Amazed: <span>6%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/javascripts/jquery-1.11.1.min.js"></script>
         <script src="/javascripts/nprogress.js"></script>
+        <script src="/javascripts/Chart.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
-        <script src="/javascripts/script-landingpage.js"></script>
-
+        <script src="/javascripts/script.js"></script>
     </body>
 </html>

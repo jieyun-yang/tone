@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Tone</title>
+        <meta name="apple-touch-fullscreen" content="yes"> 
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+        <link href="/stylesheets/animate.css" rel="stylesheet">
+        <link href="/stylesheets/nprogress.css" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/font.css">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <div class="container-fluid me-container">
+            <div class="row header">
+                <div class="col-xs-4 col-sm-6 col-md-6">
+                    <section class="logo-container">
+                        <div class="logo mad">
+                            <img src="/images/tone-mad.png">
+                        </div>
+                        <div class="logo happy hiden">
+                            <img src="/images/tone-happy.png">
+                        </div>
+                        <div class="logo excited hiden">
+                            <img src="/images/tone-excited.png">
+                        </div>
+                        <div class="logo sad hiden">
+                            <img src="/images/tone-sad.png">
+                        </div>
+                        <div class="logo fear hiden">
+                            <img src="/images/tone-fear.png">
+                        </div>
+                        <div class="logo jealous hiden">
+                            <img src="/images/tone-jealous.png">
+                        </div>
+                        <div class="logo upset hiden">
+                            <img src="/images/tone-upset.png">
+                        </div>
+                        <div class="logo comfort hiden">
+                            <img src="/images/tone-comfort.png">
+                        </div>
+                        <div class="logo surprised hiden">
+                            <img src="/images/tone-surprised.png">
+                        </div>
+                    </section>
+                </div>
+                <div class="col-xs-8 col-sm-6 col-md-6">
+                     <section class="menu-container">
+                        <a class="twitter" href="/index"><i class="if if-twitter"></i></a>
+                        <a class="me active" href="#"><i class="if if-me"></i></a>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <h1 class="text-center mytone-h1">Set my tone color</h1>
+            </div>
+            <div class="row text-center">
+                <div class="my-tone-color"></div>
+            </div>
+            <div class="row color-container">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 color-wrapper">
+                    <label for="red" class="red-info info"></label>
+                    <input type="range" name="red" min="0" max="255" step="1" value="125">
+                </div>
+            </div>
+            <div class="row color-container">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 color-wrapper">
+                    <label for="green" class="green-info info"></label>
+                    <input type="range" name="green" min="0" max="255" step="1" value="125">
+                </div>
+            </div>
+            <div class="row color-container">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 color-wrapper">
+                    <label for="blue" class="blue-info info"></label>
+                    <input type="range" name="blue" min="0" max="255" step="1" value="125">
+                </div>
+            </div>
+        </div>
+        <script src="/javascripts/jquery-1.11.1.min.js"></script>
+        <script src="/javascripts/nprogress.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/javascripts/script-me.js"></script>
+    </body>
+</html>

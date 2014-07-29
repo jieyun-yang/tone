@@ -1,0 +1,214 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+li, p, div, h1, h2, h3, h4, h5, input, textarea {
+  font-family: "Handlee", "Gabriola", "lato", "Open Sans", "Helvetica-Nune","Helvetica", "Arial", sans-serif;
+  color: #5d5d5d;
+}
+p {
+  font-size: 16px;
+}
+a {
+  color: #5d5d5d;
+  text-decoration: underline;
+  &:hover{
+  	color: #5d5d5d;
+  }
+}
+
+button {
+	padding: 5px 16px;
+	font-size: 24px;
+	background: none;
+	border-radius: 5px;
+	color: #5d5d5d;
+	border: 5px solid #5d5d5d;
+	border-image: url(/images/border.png) 10 8 stretch;
+	transition: all .3s ease-in-out;
+	&.success {
+		color: #7ace9e;
+		border: 5px solid #7ace9e;
+		border-image: url(/images/border-success.png) 10 8 stretch;
+	}
+	&:hover {
+		// border-image: none;
+		// -webkit-transform: translateY(-10px);
+		padding: 5px 30px;
+		transition: all .25s ease-in-out;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+input {
+	display: block;
+	margin: 10px auto;
+	padding: 0 4px;
+	font-size: 24px;
+	border: none;
+	border-top: 0px;
+	border-bottom: 4px solid #bababa;
+	border-image: url(/images/line-grey.png) 0 0 15 0 stretch;
+	transition: all .3s ease-in-out;
+	&:focus {
+		outline: none;
+		border-top: 0px;
+		border-bottom: 4px solid #5d5d5d;
+		border-image: url(/images/line.png) 0 0 15 0 stretch;
+		transition: all .3s ease-in-out;
+	}
+}
+
+h1 {
+	font-family: "Gabriola", sans;
+	color: #bababa;
+	@media screen and (min-width: 200px) and (max-width: 640px) { 
+		margin-top: 16px;
+		font-size: 20px;
+	}
+}
+.text-center {
+	text-align: center;
+}
+.contain {
+	width: 100%;
+	height: 100%;
+	img {
+		max-width: 100%;
+	}
+	.container-light {
+		width: 100%;
+		height: 35%;
+		display: table;
+		@media screen and (min-width: 200px) and (max-width: 640px) { 
+			height: 30%;
+		}
+		.light-container {
+			position: relative;
+			.light {
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 1;
+	  		transition: opacity 1s linear;
+			}
+			.hiden {
+				// visibility: hidden;
+			  opacity: 0;
+			  transition: opacity 1s linear;
+			}
+		}
+	}
+	.container-others {
+		width: 100%;
+		height: 65%;
+		display: table;
+		@media screen and (min-width: 200px) and (max-width: 640px) { 
+			height: 78%;
+		}
+	}
+	.container-intro {
+		width: 100%;
+		height: 100%;
+		display: table;
+		.row {
+			display: flex;
+			align-items: center;
+			.intro-text {
+				h1 {
+					padding-bottom: 20px;		
+					max-width: 80%;
+					font-family: "Handlee", "Gabriola", sans;
+					font-size: 28px;
+					line-height: 130%;
+					@media screen and (min-width: 200px) and (max-width: 640px) { 
+						padding-top: 20px;		
+						max-width: 100%;
+						font-size: 20px;
+					}
+				}
+			}
+			.hide-when-mobile {
+				@media screen and (min-width: 200px) and (max-width: 640px) { 
+					display: none;
+				}
+			}
+			.hide-when-desk {
+				@media screen and (min-width: 640px){ 
+					display: none;
+				}
+			}
+		}
+	}
+	.container-fluid {
+		display: table-cell;
+		vertical-align: middle;
+		button {
+			margin: 0 18px;
+		}
+		form {
+			button {
+				margin-top: 16px;
+			}
+			h4 {
+				margin-top: 12px;
+				color: #bdbdbd;
+			}
+		}
+		.slogan {
+			margin-top: 16px;
+		}
+		.sign-login {
+			opacity: 1;
+			transition: opacity .6s linear;
+			margin-top: 40px;
+			@media screen and (min-width: 200px) and (max-width: 640px) { 
+				margin-top: 16px;
+			}
+		}
+		.signup-form {
+			opacity: 1;
+			transition: opacity .6s linear;
+		}
+		.login-form {
+			opacity: 1;
+			transition: opacity .6s linear;
+		}
+		.hiden{
+			opacity: 0;
+			transition: opacity .6s linear;
+		}
+		.tone-container {
+			height: 400px;
+			position: relative;
+			@media screen and (min-width: 200px) and (max-width: 640px) { 
+				height: 240px;
+			}
+			.tone {
+				position: absolute;
+				top: 0;
+				left: 30%;
+				opacity: 1;
+	  		transition: opacity 1s linear;
+	  		@media screen and (min-width: 200px) and (max-width: 640px) { 
+					left: 6%;
+				}
+			}
+			.hiden {
+				// visibility: hidden;
+			  opacity: 0;
+			  transition: opacity 1s linear;
+			}
+		}
+	}
+}
+@import "index";
+@import "me";
